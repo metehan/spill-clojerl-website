@@ -1,0 +1,12 @@
+(ns spillweb.controller.root
+  (:require [spillweb.core :refer (response)]))
+
+(def res [:html
+          [:head
+           [:title "Spill"]]
+          [:body [:h1 "Hello World!"]]
+          [:p "I am a controller"]])
+
+(defn init [req _]
+  (let [[_ req-body req] (cowboy_req/read_body req)]
+    (response 200 req res)))

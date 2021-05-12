@@ -1,1 +1,9 @@
 (ns spillweb.core)
+
+(defn response [http-status req content]
+  (clj->erl [:ok
+             (cowboy_req/reply http-status
+                               #erl{}
+                               (hiccup.core/html content)
+                               req)
+             nil]))

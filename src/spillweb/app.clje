@@ -4,7 +4,7 @@
 (def port 8080)
 
 (def routes
-  '{:_ (["/" :spillweb.root nil]
+  '{:_ (["/" :spillweb.controller.root nil]
         ["/[...]" :cowboy_static [:priv_dir :spillweb ""]])})
 
 (defn start-cowboy
