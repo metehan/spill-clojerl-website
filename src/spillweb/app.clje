@@ -1,7 +1,22 @@
 (ns spillweb.app
   (:require [spillweb.sup :as sup]))
 
+(def port 8080)
+
+(def routes
+  '{:_ (["/" :spillweb.root nil]
+        ["/[...]" :cowboy_static [:priv_dir :spillweb ""]])})
+
+(defn start-cowboy
+  []
+  (let [routes (-> routes clj->erl maps/to_list)
+        dispatch (cowboy_router/compile routes)
+        transport-opts (-> {:port port} clj->erl maps/to_list)
+        protocol-opts (clj->erl {:env {:dispatch dispatch}})]
+    (cowboy/start_clear :spillweb.listener transport-opts protocol-opts)))
+
 (defn start [type args]
+  (start-cowboy)
   (sup/start-link))
 
 (defn stop [state]

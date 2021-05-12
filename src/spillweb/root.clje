@@ -1,0 +1,9 @@
+(ns spillweb.root
+  (use [hiccup.core]))
+
+(def content (html [:html [:head [:title "Spill"]] [:body [:h1 "Hello World!"]]]))
+
+(defn init [req _]
+  (let [[_ req-body req] (cowboy_req/read_body req)
+        req (cowboy_req/reply 200 #erl{} content req)]
+    (clj->erl [:ok req nil])))
