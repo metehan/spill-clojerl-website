@@ -1,0 +1,23 @@
+(ns spillweb.view.layout.main)
+
+(def defaults 
+  {:lang "tr"
+   :title "SPILL - En kolay dağıtım, tüp ve su takip programı"
+   :head ""})
+
+(defn html
+  ([content] (html content defaults))
+  ([content extras]
+   [:html
+    {:lang (:lang extras)}
+    [:head
+     [:meta {:charset "UTF-8"}]
+     [:meta
+      {:content "width=device-width, initial-scale=1.0"
+       :name "viewport"}]
+     [:link {:href "/css/app.css", :rel "stylesheet"}]
+     [:title (:title extras)]
+     (:head extras)]
+    [:body
+     content
+     [:script {:src "/js/all.js"}]]]))

@@ -1,0 +1,53 @@
+(ns spillweb.view.part.footer)
+
+(def main
+  [:div#footer.gentle-shadow
+   [:div.container
+    [:div.cols
+     [:div.c4.sm12.pad1 [:img.logo {:src "/spill/logo.webp"}]]
+     [:div.c4.sm12.pad1
+      [:ul
+       [:li [:a "Kayıt Olun"]]
+       [:li
+        [:a.hide-sm
+         {:onclick "openTheApp('http://uygulama.spill.web.tr')"
+          :href "#"}
+         "Uygulama      Girişi"]
+        [:a.show-sm
+         {:href "http://uygulama.spill.web.tr"}
+         "Uygulama Girişi"]]
+       [:li
+        [:a
+         {:href
+          "https://play.google.com/store/apps/details?id=net.octoflow.spilltr"}
+         "Spill Mobil Uygulaması"]]
+       [:li
+        [:a
+         {:href "https://spill.web.tr/spill.apk"}
+         "Mobil APK Dosyası"]]
+       [:li
+        [:a
+         {:href "http://santral.octoflow.net/canlipanel/"}
+         "Santral Canlı Panel Girişi"]]
+       [:li
+        [:a
+         {:href "https://spill.web.tr/privacy.html"}
+         "Gizlilik Politikası"]]
+       [:li
+        [:a
+         {:href "https://spill.web.tr/tos.html"}
+         "Kullanım Koşulları"]]]]
+     [:div.c4.sm12.pad1
+      [:strong "Bize Ulaşın"]
+      " "
+      [:br]
+      " Ludwinowska 7/9, 30-331, Kraków,Poland "
+      [:br]
+      "Türkiye: +90 (850) 550 50 70 "
+      [:br]
+      "Polonya: +48 (884) 374 443 "
+      [:br]
+      "USA: +1 (917) 341 76 70  "]
+     [:div.c12.copyright
+      "Copyright ©2021 Octoflow, All Rights Reserved"
+      [:br]]]]])

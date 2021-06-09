@@ -1,0 +1,13 @@
+(ns spillweb.view.part.header)
+
+(def main
+  [:div#navbar.header
+   [:div.container
+    [:a {:href "#"} [:img {:src "/spill/logo.webp"}]]
+    [:div.navmenu
+     [:a.item.hide-sm
+      {:onclick "openTheApp('http://uygulama.spill.web.tr')"
+       :href "#"}
+      "Uygulama Girişi"]
+     [:a.item.hide-sm {:href "#"} "Demo Girişi"]
+     [:a.last.item {:href "#"} "Kayıt Ol"]]]])

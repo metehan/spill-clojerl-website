@@ -1,0 +1,118 @@
+(ns spillweb.view.root
+  (:require [spillweb.view.layout.main :as layout]
+            [spillweb.view.part.demoui :as demoui]
+            [spillweb.view.part.header :as header]
+            [spillweb.view.part.footer :as footer]
+            ))
+
+(def root-view
+  (layout/html
+  [:div
+    header/main
+    [:div.hero.gentle-shadow
+     [:div.container
+      [:div.cols
+       [:div.md12.c4.pad2
+        [:h1 "En pratik su takip programı"]
+        [:ul
+         [:li
+          "İşletmenizde yapılan tüm satışları anlık olarak takip edip yönetebilmeniz için en sağlıklı yazılım.  "]
+         [:li
+          "Stok yönetimi, depozitolu ürün takip, alacak verecek takip, personel nakit takibi, muhasebe modülü.  "]]]
+       [:div.md12.c8.pad2.text-center demoui/main-page]]]]
+    [:div.container
+     [:h1 "Spill - Tüp ve Su takip programı"]
+     [:div.cols
+      [:div.sm12.c4
+       [:img.section-image {:src "/img/navigation.webp"}]]
+      [:div.sm12.c8
+       [:p.explain
+        "Spill piyasadaki en genç ve dinamik tüp, su takip programıdır. 2020 Haziran ayında denemesürümünü yayınaaldığımız Spill şu anda onlarca tüp su bayisine hizmet veriyor. Ayrıca mandıra ve marketler deuygulamamızı kullanıyor.  "]
+       [:p.explain
+        "Spill bir yaşını doldurmadan bir çok özellik eklendi ve kullanıcılarımızıntavsiyeleriilegeliştirildi. Spill'in en güçlü yanı: esnek teknolojisi sayesinde hızlı bir şekilde programgeliştirebilyorve daha fazla özelliklerleişletmenize değer katabiliyor olması. Ayrıca sistem kaynaklarını tüketmediğinden rakip ürünleregöre çokdaha ucuzdur."]]]]
+    [:div.section.gra01.pad1 [:div.container [:h1 "Hello World"]]]
+    [:div.container
+     [:h2 "Otomatik sipariş alma sanal santral ile çok kolay!"]
+     [:div.cols
+      [:div.sm12.c8
+       [:p.explain
+        "Spill entegre sanal santrali sayesinde müşterileriniz aradığında sizinle görüşmeden tuşlama yaparaksiparişverebilir. Ayrıca hiç bir başka uygulamada olmayan bir özelliği şudur: "
+        [:strong
+         "Her müşteriniz için  tek tek  santrali açabilirsiniz"]
+        " böylelikle isteyen müşterileriniz sanal santralden tuşlama yaparaksiparişverebilirken istemeyen müşterileriniz direk size bağlanabilir."
+        [:br]
+        [:br]
+        [:strong
+         "Aşağıdaki özellikler Spill'den başka hiçbir programda yoktur:"]]
+       [:ul
+        [:li
+         "Programın içinden santral mesai dışına alınıp kapatılabilir."]
+        [:li
+         "Plasiyerleriniz müşteri numarasını görmeden müşteriyi arayabilir. Böylelikle müşteri listenizi  korursunuz."]
+        [:li "Santral her müşteri için tek tek açılıp kapatılabilir."]
+        [:li
+         "Müşterileriniz santral üzerinden tercih ettikleri teslim saatini seçebilir."]]]
+      [:div.sm12.c4.text-center
+       [:div.color-card.purple
+        [:p "Örnek santral sesini dinlemek için tıklayın:"]
+        [:audio
+         {:controls "controls"}
+         [:source
+          {:type "audio/mpeg", :src "media/mp3/hosgeldiniz.mp3"}]]
+        [:audio
+         {:controls "controls"}
+         [:source
+          {:type "audio/mpeg", :src "media/mp3/siparisalindi.mp3"}]]]]]
+     [:h2 "Plasiyer yönetimi Spill ile sihir gibi!"]
+     [:div.cols
+      [:div.sm12.c8
+       [:ul
+        [:li
+         "Plasiyerleriniz cep telefonlarına indirecekleri Spill uygulaması sayesinde sipariş gelir  gelmez bildirim  ile haberdar edilir."]
+        [:li
+         "Navigasyon sayesinde plasiyeriniz müşteri adresine vakit kaybetmeden ve şaşırmadan ulaşır.  Yeni personel  bile sanki yıllardır çalışıyormuşcasına rahat dağıtım yapar."]
+        [:li
+         "GPS sayesinde plasiyerlerinizin konumlarını ve hangi siparişe gittiklerini harita üzerinden  görebilirsiniz."]
+        [:li
+         "Plasiyeriniz sipariş teslim sırasında aldığı nakit miktarını girer ve otomatik muhasebe  kaydı oluşur.  Örneğin müşterinizde 2 lira nakit eksik ise 2 lira otomatik borç kaydedilir."]
+        [:li
+         "Plasiyeriniz teslim sırasında depozitolu ürünlerin boşunu aldığında stok kayıtları otomatik  oluşur  böylelikle stoklarınızı kusursuzca takip edebilirsiniz."]
+        [:li
+         "Gün sonu geldiğinde plasiyerlerinizle hesaplaşmanız bir dakika bile sürmez. Plasiyerinizin  kimden kaç  para aldığı ve aracındaki stokları ekranınızda görünür."]]]
+      [:div.sm12.c4 demoui/navigation]]]
+    [:div.section.gra01.pad1
+     [:div.container
+      [:h2 "Müşteri listenizi kuş bakışı görün!"]
+      [:div.cols
+       [:div.sm12.c4 demoui/customer-list]
+       [:div.sm12.c8
+        [:p.explain
+         "Emaneti olan müşterilerinizi mi görmek istediniz? Tek tıkla listeleyin. Borcu olan  müşterilerinizi mi  görmek  istediniz sadece tek tık! Ondört gündür sipariş vermeyen müşterileriniz kimler bilmek mi  istediniz?  Spill'in  akıllıca tasarlanmış arayüzü sayesinde tüm bu bilgilere ulaşmak çok kolay. Spill ekranları o  kadar  kullanışlı ki basitliği sizi şaşırtacak."]
+        [:p.explain
+         "Müşterilerinizin geçmiş siparişlerine ulaşmak ve müşterileriniz hakkında notlar  almak çok  basit. Hızlı arama kutusu sayesinde her müşteriniz sadece bir kaç tuşlama uzağınızda."]]]]]
+    [:div.container
+     [:h2 "Raporlar ile kendinizle yarışın!"]
+     [:div.cols
+      [:div.sm12.c8
+       [:p.explain
+        "Günlük performans raporları ile ortalama teslim sürenizin zaman içinde nasıldeğiştiğinigörün. Ortalama sipariş büyüklüğünüzü ve sipariş adetlerini görerek işletmenizin karlılığınıarttıracağınızıdaha iyi planlayın."]
+       [:p.explain
+        "Raporlar ile personelinizin ve işletmenizin zaman içindeki değişimini görmenizbakışaçınızı değiştirecektir. Girişim dünyasında sık tekrarlanan bir söz vardır: \"Ölçmediğiniz şeyigeliştiremezsiniz.\" Spill raporlama ekranları büyüme planlarınızın ilk adımı olacaktır."]]
+      [:div.sm12.c4 demoui/reports]]
+     [:h2 "Veri güvenliği birinci önceliğimiz!"]
+     [:div.cols
+      [:div.sm12.c4
+       [:img.section-image {:src "/img/data-protection.webp"}]]
+      [:div.sm12.c8
+       [:p.explain
+        "İşletmenizin en değerli varlığı müşterileriniz. Müşterileri verilerinizingüvenliğiişletmenizin hayatta kalması için en kritik unsur. Biz de bunun farkında olarak size en güvenlihizmetisağlıyoruz."]
+       [:p.explain]
+       [:ul
+        [:li
+         "İşletme veritabanınız üç yedekli olarak saklanır ve sizden başka birisi asla erişemez."]
+        [:li
+         "Plasiyerlerinizden müşteri numaralarını gizleyebilirsiniz. Böylelikle plasiyerlerin numara ve  müşteri  toplama riskinin önüne geçersiniz. Plasiyerleriniz numaralar gizli olsa bile santraliniz  üzerinden  bağlantıyla müşterilerinizi gerektiğinde arayabilir."]
+        [:li
+         "Avrupa merkezli yazılım  firmamızın  tek iş kolu yazılımdır."]]]]]
+    footer/main]))
+

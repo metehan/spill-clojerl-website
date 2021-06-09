@@ -1,0 +1,585 @@
+(ns spillweb.view.part.demoui)
+
+(def logo-svg 
+  [:svg
+   {:fill "cyan", :viewbox "0 0 24 24"}
+   [:path
+    {:stroke-width "2"
+     :stroke "currentColor"
+     :d
+     "M6.34315 19.5208C3.21895 16.3966 3.21895 11.3312 6.34315 8.20705L12 2.5502L17.6569 8.20705C20.781 11.3312 20.781 16.3966 17.6569 19.5208C14.5327 22.645 9.46734 22.645 6.34315 19.5208Z"}]])
+
+(def phone-svg
+  [:svg
+   {:fill "white", :viewbox "0 0 53.942 53.942"}
+   [:path
+    {:d
+     "M53.364,40.908c-2.008-3.796-8.981-7.912-9.288-8.092c-0.896-0.51-1.831-0.78-2.706-0.78c-1.301,0-2.366,0.596-3.011,1.68                                                  c-1.02,1.22-2.285,2.646-2.592,2.867c-2.376,1.612-4.236,1.429-6.294-0.629L17.987,24.467c-2.045-2.045-2.233-3.928-0.632-6.291                                                  c0.224-0.309,1.65-1.575,2.87-2.596c0.778-0.463,1.312-1.151,1.546-1.995c0.311-1.123,0.082-2.444-0.652-3.731                                                  c-0.173-0.296-4.291-7.27-8.085-9.277c-0.708-0.375-1.506-0.573-2.306-0.573c-1.318,0-2.558,0.514-3.49,1.445L4.7,3.986                                                  c-4.014,4.013-5.467,8.562-4.321,13.52c0.956,4.132,3.742,8.529,8.282,13.068l14.705,14.705c5.746,5.746,11.224,8.66,16.282,8.66                                                  c0,0,0,0,0.001,0c3.72,0,7.188-1.581,10.305-4.698l2.537-2.537C54.033,45.163,54.383,42.833,53.364,40.908z"}]])
+
+(def main-page
+  [:div#demo-ui.demo-ui.state-main
+   [:div.du-neworder
+    [:div.cols
+     [:div.c6
+      [:div.du-text.w3]
+      [:div.du-text.w2]
+      [:div.du-input]
+      [:div.du-text.w3]
+      [:div.du-input.h2]
+      [:div.du-text.w2]
+      [:div.du-text.w1]
+      [:div.du-input.h2]]
+     [:div.c6
+      [:div.du-text.w2]
+      [:div.du-text.w3]
+      [:div.du-input]
+      [:div.du-button]]]]
+   [:div.du-searchbox]
+   [:div#du-popup.du-popup.none
+    {:onclick "duAnimations.hidePopup()"}
+    [:div.h [:div.du-text.w3.darker]]
+    [:div.cols.mar2
+     [:div.c6
+      [:div.du-text.w3]
+      [:div.du-text.w2]
+      [:div.du-text.w2]
+      [:div.du-input]
+      [:div.du-text.w3]
+      [:div.du-input.h2]
+      [:div.du-text.w1]
+      [:div.du-text.w2]
+      [:div.du-input.h3]]
+     [:div.c6
+      [:div.du-text.w2]
+      [:div.du-text.w3]
+      [:div.du-input]
+      [:div.du-button]
+      [:div.du-button.grey]]]]
+   [:div#du-call.du-call.none
+    {:onclick "duAnimations.showPopup()"}
+    [:div.du-text.w1.light]
+    [:div.du-text.w2.light]
+    [:div.du-br]
+    [:div.du-text.w3.light.thinner]
+    [:div.du-callbuttons
+     [:div]
+     "<!--dont delete-->"
+     [:div]
+     [:div]]
+    [:div.phone
+     phone-svg]]
+   [:div.du-area
+    [:div.du-box
+     [:table
+      [:tr
+       [:td]
+       [:td [:div.du-text.w2.darker]]
+       [:td [:div.du-text.w1.darker]]
+       [:td [:div.du-text.w1.darker]]]
+      
+      [:tr.du-order.none
+       {:onclick "duAnimations.showPopup()"}
+       [:td.du-oa [:div.du-ball] [:div.du-text.w1]]
+       [:td.du-ob
+        [:div.du-text.w1.darker]
+        [:div.du-text.w2.darker]
+        [:span.du-br]
+        [:div.du-text.w2]
+        [:span.du-br]
+        [:div.du-text.w1.thinner]
+        [:div.du-text.w2.thinner]
+        [:div.du-text.w1.thinner]
+        [:div.du-text.w2.thinner]]
+       [:td.du-oc [:div.du-product] [:div.du-product]]
+       [:td.du-od [:div.du-plas]]]
+      
+      
+      [:tr.du-order.none
+       {:onclick "duAnimations.showPopup()"}
+       [:td.du-oa [:div.du-ball] [:div.du-text.w1]]
+       [:td.du-ob
+        [:div.du-text.w1.darker]
+        [:div.du-text.w2.darker]
+        [:span.du-br]
+        [:div.du-text.w2]
+        [:span.du-br]
+        [:div.du-text.w1.thinner]
+        [:div.du-text.w2.thinner]
+        [:div.du-text.w1.thinner]
+        [:div.du-text.w2.thinner]]
+       [:td.du-oc [:div.du-product] [:div.du-product]]
+       [:td.du-od [:div.du-plas]]]
+      
+      
+      [:tr.du-order.none
+       {:onclick "duAnimations.showPopup()"}
+       [:td.du-oa [:div.du-ball] [:div.du-text.w1]]
+       [:td.du-ob
+        [:div.du-text.w1.darker]
+        [:div.du-text.w2.darker]
+        [:span.du-br]
+        [:div.du-text.w2]
+        [:span.du-br]
+        [:div.du-text.w1.thinner]
+        [:div.du-text.w2.thinner]
+        [:div.du-text.w1.thinner]
+        [:div.du-text.w2.thinner]]
+       [:td.du-oc [:div.du-product] [:div.du-product]]
+       [:td.du-od [:div.du-plas]]]
+      
+      
+      [:tr.du-order.none
+       {:onclick "duAnimations.showPopup()"}
+       [:td.du-oa [:div.du-ball] [:div.du-text.w1]]
+       [:td.du-ob
+        [:div.du-text.w1.darker]
+        [:div.du-text.w2.darker]
+        [:span.du-br]
+        [:div.du-text.w2]
+        [:span.du-br]
+        [:div.du-text.w1.thinner]
+        [:div.du-text.w2.thinner]
+        [:div.du-text.w1.thinner]
+        [:div.du-text.w2.thinner]]
+       [:td.du-oc [:div.du-product] [:div.du-product]]
+       [:td.du-od [:div.du-plas]]]
+      
+      
+      [:tr.du-order.none
+       {:onclick "duAnimations.showPopup()"}
+       [:td.du-oa [:div.du-ball] [:div.du-text.w1]]
+       [:td.du-ob
+        [:div.du-text.w3.darker]
+        [:div.du-text.w2.darker]
+        [:span.du-br]
+        [:div.du-text.w2]
+        [:span.du-br]
+        [:div.du-text.w1.thinner]
+        [:div.du-text.w2.thinner]
+        [:div.du-text.w1.thinner]]
+       [:td.du-oc [:div.du-product] [:div.du-product]]
+       [:td.du-od [:div.du-plas]]]
+      
+      
+      [:tr.du-order.none
+       {:onclick "duAnimations.showPopup()"}
+       [:td.du-oa [:div.du-ball] [:div.du-text.w1]]
+       [:td.du-ob
+        [:div.du-text.w2.darker]
+        [:div.du-text.w1.darker]
+        [:span.du-br]
+        [:div.du-text.w2]
+        [:span.du-br]
+        [:div.du-text.w1.thinner]
+        [:div.du-text.w3.thinner]
+        [:div.du-text.w2.thinner]]
+       [:td.du-oc [:div.du-product] [:div.du-product]]
+       [:td.du-od [:div.du-plas]]]
+      ]]]
+   [:div.du-right
+    [:div.du-box
+     [:div.du-text.w2.darker]
+     [:div.du-text.w3.darker]
+     [:span.du-br]
+     [:div.du-text.w1.darker]
+     [:div.du-text.w3]
+     [:span.du-br]
+     [:div.du-text.w1.thinner.darker]
+     [:div.du-text.w1.thinner]
+     [:div.du-text.w1.thinner]]
+    [:div.du-stats [:div.item] [:div.item] [:div.item]]
+    [:div.du-box
+     [:div.du-text.w3.darker]
+     [:div.du-volume [:div#du-percent.percent]]
+     [:div.du-plasiyer
+      [:div.color.bc22]
+      [:div.du-text.w3]
+      [:div.du-text.w1]
+      [:div.on-duty]]
+     [:div.du-plasiyer
+      [:div.color.bc15]
+      [:div.du-text.w1]
+      [:div.du-text.w2]
+      [:div.on-duty]]
+     [:div.du-plasiyer
+      [:div.color.bc2]
+      [:div.du-text.w1]
+      [:div.du-text.w3]
+      [:div.on-break]]]
+    [:div.du-box
+     [:div.du-text.w1.darker]
+     [:div.du-text.w3.darker]
+     [:div.du-text.w2.darker]
+     [:div.du-plasiyer
+      [:div.color.bc0]
+      [:div.du-text.w3]
+      [:div.du-text.w1]
+      [:div.amount]]
+     [:div.du-plasiyer
+      [:div.color.bc5]
+      [:div.du-text.w1]
+      [:div.du-text.w2]
+      [:div.amount]]
+     [:div.du-plasiyer
+      [:div.color.bc8]
+      [:div.du-text.w1]
+      [:div.du-text.w3]
+      [:div.amount]]
+     [:div.du-plasiyer
+      [:div.color.bc1]
+      [:div.du-text.w3]
+      [:div.amount]]]]
+   [:div.du-menu
+    [:div.du-logo
+     logo-svg
+     " SPILL"]
+    [:div.du-text.w3.light.thinner]
+    [:div.du-text.w2.light.thinner]
+    [:div.du-text.w3.light.thinner]
+    [:div.du-text.w2.light.thinner]
+    [:div.du-menuright
+     [:div.du-text.w0.light]
+     [:div.du-text.w0.light]
+     [:div.du-text.w0.light]]]])
+
+
+
+(def reports
+  [:div.demo-ui.reports
+   [:div.du-neworder]
+   [:div.du-searchbox]
+   [:div.du-area
+    [:div.du-box
+     [:div.du-text.w2.darker]
+     [:div.du-text.w3.darker]
+     [:div.cols.mar1
+      [:div.c1.du-glabels
+       [:div.du-text.w1]
+       [:div.du-text.w1]
+       [:div.du-text.w1]
+       [:div.du-text.w1]
+       [:div.du-text.w1]
+       [:div.du-text.w1]
+       [:div.du-text.w1]
+       [:div.du-text.w1]
+       [:div.du-text.w1]
+       [:div.du-text.w1]]
+      [:div.c11
+       [:div.du-graph
+        [:div.du-bar]
+        [:div.du-bar]
+        [:div.du-bar]
+        [:div.du-bar]
+        [:div.du-bar]
+        [:div.du-bar]
+        [:div.du-bar]
+        [:div.du-bar]
+        [:div.du-bar]
+        [:div.du-bar]
+        [:div.du-bar]
+        [:div.du-bar]
+        [:div.du-bar]
+        [:div.du-bar]
+        [:div.du-bar]
+        [:div.du-bar]]]
+      [:div.c1]
+      [:div.c11.du-barlabels
+       [:div.du-text.w1]
+       [:div.du-text.w1]
+       [:div.du-text.w1]
+       [:div.du-text.w1]
+       [:div.du-text.w1]
+       [:div.du-text.w1]
+       [:div.du-text.w1]
+       [:div.du-text.w1]
+       [:div.du-text.w1]
+       [:div.du-text.w1]
+       [:div.du-text.w1]
+       [:div.du-text.w1]
+       [:div.du-text.w1]
+       [:div.du-text.w1]
+       [:div.du-text.w1]
+       [:div.du-text.w1]]
+      [:div.c12.pad1
+       [:div.du-text.du-vwt.darker.thicker]
+       [:div.du-br]
+       [:div.du-text.du-vwt]
+       [:div.du-text.du-vwt]
+       [:div.du-text.du-vwt]
+       [:div.du-text.du-vwt]
+       [:div.du-text.du-vwt]
+       [:div.du-text.du-vwt]
+       [:div.du-text.du-vwt]]]]]
+   [:div.du-menu
+    [:div.du-logo
+     logo-svg
+     " SPILL  "]
+    [:div.du-text.w3.light.thinner]
+    [:div.du-text.w2.light.thinner]
+    [:div.du-text.w3.light.thinner]
+    [:div.du-text.w2.light.thinner]
+    [:div.du-menuright
+     [:div.du-text.w0.light]
+     [:div.du-text.w0.light]
+     [:div.du-text.w0.light]]]])
+
+
+(def navigation
+  [:div.demo-ui.map
+   [:div.du-neworder]
+   [:div.du-searchbox]
+   [:div.cols.pad1
+    [:div.c4
+     [:div.du-box
+      [:div.du-text.w2.darker]
+      [:div.du-text.w2.darker]
+      [:div.du-br]
+      [:div.du-text.w3]
+      [:div.du-text.w2]
+      [:div.du-text.w1]
+      [:div.du-map
+       [:div.du-mmc.bc2]
+       [:div.du-mmc.bc8]
+       [:div.du-mmc.bc14]
+       [:div.du-mmc.bc18]
+       [:div.du-mmc.bc22]
+       [:img {:src "/img/mapv.webp"}]]
+      [:div.du-text.w1]
+      [:div.du-text.w3]
+      [:div.du-text.w2]
+      [:div.du-text.w2]
+      [:div.du-text.w1]
+      [:div.du-text.w2]
+      [:div.du-text.w3]
+      [:div.du-text.w2]
+      [:div.du-text.w1]]]
+    [:div.c8
+     [:table
+      
+      [:tr.du-order
+       [:td.du-oa [:div.du-mmc.bc2]]
+       [:td.du-ob
+        [:div.du-text.w1.darker]
+        [:div.du-text.w2.darker]
+        [:span.du-br]
+        [:div.du-text.w2]
+        [:span.du-br]
+        [:div.du-text.w1.thinner]
+        [:div.du-text.w2.thinner]
+        [:div.du-text.w1.thinner]
+        [:div.du-text.w2.thinner]]
+       [:td.du-oc [:div.du-product] [:div.du-product]]]
+      
+      
+      [:tr.du-order
+       [:td.du-oa [:div.du-mmc.bc8]]
+       [:td.du-ob
+        [:div.du-text.w1.darker]
+        [:div.du-text.w2.darker]
+        [:span.du-br]
+        [:div.du-text.w2]
+        [:span.du-br]
+        [:div.du-text.w1.thinner]
+        [:div.du-text.w2.thinner]
+        [:div.du-text.w1.thinner]
+        [:div.du-text.w2.thinner]]
+       [:td.du-oc [:div.du-product]]]
+      
+      
+      [:tr.du-order
+       [:td.du-oa [:div.du-mmc.bc14]]
+       [:td.du-ob
+        [:div.du-text.w1.darker]
+        [:div.du-text.w2.darker]
+        [:span.du-br]
+        [:div.du-text.w2]
+        [:span.du-br]
+        [:div.du-text.w1.thinner]
+        [:div.du-text.w2.thinner]
+        [:div.du-text.w1.thinner]
+        [:div.du-text.w2.thinner]]
+       [:td.du-oc
+        [:div.du-product]
+        [:div.du-product]
+        [:div.du-product]]]
+      
+      
+      [:tr.du-order
+       [:td.du-oa [:div.du-mmc.bc22]]
+       [:td.du-ob
+        [:div.du-text.w1.darker]
+        [:div.du-text.w2.darker]
+        [:span.du-br]
+        [:div.du-text.w2]
+        [:span.du-br]
+        [:div.du-text.w1.thinner]
+        [:div.du-text.w2.thinner]
+        [:div.du-text.w1.thinner]
+        [:div.du-text.w2.thinner]]
+       [:td.du-oc [:div.du-product]]]
+      
+      
+      [:tr.du-order
+       [:td.du-oa [:div.du-mmc.bc18]]
+       [:td.du-ob
+        [:div.du-text.w3.darker]
+        [:div.du-text.w2.darker]
+        [:span.du-br]
+        [:div.du-text.w2]
+        [:span.du-br]
+        [:div.du-text.w1.thinner]
+        [:div.du-text.w2.thinner]
+        [:div.du-text.w1.thinner]]
+       [:td.du-oc [:div.du-product] [:div.du-product]]]
+      
+      
+      [:tr.du-order
+       [:td.du-oa [:div.du-mmc.bc14]]
+       [:td.du-ob
+        [:div.du-text.w2.darker]
+        [:div.du-text.w1.darker]
+        [:span.du-br]
+        [:div.du-text.w2]
+        [:span.du-br]
+        [:div.du-text.w1.thinner]
+        [:div.du-text.w3.thinner]
+        [:div.du-text.w2.thinner]]
+       [:td.du-oc [:div.du-product]]]
+      ]]]
+   [:div.du-menu
+    [:div.du-logo
+     logo-svg
+     " SPILL  "]
+    [:div.du-text.w3.light.thinner]
+    [:div.du-text.w2.light.thinner]
+    [:div.du-text.w3.light.thinner]
+    [:div.du-text.w2.light.thinner]
+    [:div.du-menuright
+     [:div.du-text.w0.light]
+     [:div.du-text.w0.light]
+     [:div.du-text.w0.light]]]])
+
+
+(def customer-list
+  [:div.demo-ui.customer-list
+   [:div.du-neworder]
+   [:div.du-searchbox]
+   [:div.du-area
+    [:div.du-box
+     [:table
+      [:tr
+       [:td [:div.du-text.w2.darker]]
+       [:td [:div.du-text.w1.darker]]
+       [:td [:div.du-text.w1.darker]]]
+      
+      [:tr.du-order
+       [:td.du-ob
+        [:div.du-text.w1.darker]
+        [:div.du-text.w2.darker]
+        [:span.du-br]
+        [:div.du-text.w2]
+        [:span.du-br]
+        [:div.du-text.w1.thinner]
+        [:div.du-text.w2.thinner]
+        [:div.du-text.w1.thinner]
+        [:div.du-text.w2.thinner]]
+       [:td.du-od
+        [:div.du-plas]
+        [:div.du-text.w3]
+        [:div.du-text.w1]]
+       [:td.du-oc
+        [:div.du-product]
+        [:div.du-product]
+        [:div.du-product]]]
+      
+      
+      [:tr.du-order
+       [:td.du-ob
+        [:div.du-text.w1.darker]
+        [:div.du-text.w2.darker]
+        [:span.du-br]
+        [:div.du-text.w2]
+        [:span.du-br]
+        [:div.du-text.w1.thinner]
+        [:div.du-text.w2.thinner]
+        [:div.du-text.w1.thinner]
+        [:div.du-text.w2.thinner]]
+       [:td.du-od [:div.du-plas]]
+       [:td.du-oc [:div.du-product] [:div.du-product]]]
+      
+      
+      [:tr.du-order
+       [:td.du-ob
+        [:div.du-text.w1.darker]
+        [:div.du-text.w2.darker]
+        [:span.du-br]
+        [:div.du-text.w2]
+        [:span.du-br]
+        [:div.du-text.w1.thinner]
+        [:div.du-text.w2.thinner]
+        [:div.du-text.w1.thinner]
+        [:div.du-text.w2.thinner]]
+       [:td.du-od
+        [:div.du-plas]
+        [:div.du-text.w1]
+        [:div.du-text.w2]]
+       [:td.du-oc [:div.du-product] [:div.du-product]]]
+      
+      
+      [:tr.du-order
+       [:td.du-ob
+        [:div.du-text.w1.darker]
+        [:div.du-text.w2.darker]
+        [:span.du-br]
+        [:div.du-text.w2]
+        [:span.du-br]
+        [:div.du-text.w1.thinner]
+        [:div.du-text.w2.thinner]
+        [:div.du-text.w1.thinner]
+        [:div.du-text.w2.thinner]]
+       [:td.du-od [:div.du-plas] [:div.du-text.w3]]
+       [:td.du-oc [:div.du-product]]]
+      
+      
+      [:tr.du-order
+       [:td.du-ob
+        [:div.du-text.w3.darker]
+        [:div.du-text.w2.darker]
+        [:span.du-br]
+        [:div.du-text.w2]
+        [:span.du-br]
+        [:div.du-text.w1.thinner]
+        [:div.du-text.w2.thinner]
+        [:div.du-text.w1.thinner]]
+       [:td.du-od [:div.du-plas] [:div.du-text.w3]]
+       [:td.du-oc [:div.du-product] [:div.du-product]]]
+      
+      
+      [:tr.du-order
+       [:td.du-ob
+        [:div.du-text.w2.darker]
+        [:div.du-text.w1.darker]
+        [:span.du-br]
+        [:div.du-text.w2]
+        [:span.du-br]
+        [:div.du-text.w1.thinner]
+        [:div.du-text.w3.thinner]
+        [:div.du-text.w2.thinner]]
+       [:td.du-od
+        [:div.du-plas]
+        [:div.du-text.w3]
+        [:div.du-text.w2]]
+       [:td.du-oc [:div.du-product] [:div.du-product]]]
+      ]]]
+   [:div.du-menu
+    [:div.du-logo
+     logo-svg
+     " SPILL"]
+    [:div.du-text.w3.light.thinner]
+    [:div.du-text.w2.light.thinner]
+    [:div.du-text.w3.light.thinner]
+    [:div.du-text.w2.light.thinner]
+    [:div.du-menuright
+     [:div.du-text.w0.light]
+     [:div.du-text.w0.light]
+     [:div.du-text.w0.light]]]])
